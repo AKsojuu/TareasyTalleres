@@ -25,8 +25,8 @@ class Tienda(tiendabase):
         self.producto1= tk.Label(
             self,
             text="Bebidas",
-            font=("Arial",16,"bold"),
-            bg="BLUE    ",
+            font=("Arial",12,"bold"),
+            bg="BLUE",
             fg="GREEN"
         )
         self.producto1.pack()
@@ -54,8 +54,7 @@ class Tienda(tiendabase):
             font=("Arial",12,"bold"),
             bg="BLUE",
             fg="GREEN",
-            width=50,
-            height=8
+            width=10
         )
         self.producto2.pack(pady=5)
         
@@ -70,4 +69,6 @@ class Tienda(tiendabase):
         self.lista_comida.insert(tk.END,"Encebollado    -   2#")# END: Al final del ultimo registro ingresa esto
         self.lista_comida.insert(tk.END,"Sushi      -       1$")
         
-app.mainloop
+if __name__ == "__main__":
+    app = Tienda()  # Crear la instancia de la tienda
+    app.mainloop()  # mainloop para que se ejecute el programa sin cerrarse
