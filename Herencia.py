@@ -58,6 +58,7 @@ class Tienda(tiendabase):
         )
         self.producto2.pack(pady=5)
         
+        
         self.lista_comida=tk.Listbox(
             self,
             width=50,
@@ -66,9 +67,29 @@ class Tienda(tiendabase):
         )
         self.lista_comida.pack(pady=5)
         
+        
         self.lista_comida.insert(tk.END,"Encebollado    -   2#")# END: Al final del ultimo registro ingresa esto
         self.lista_comida.insert(tk.END,"Sushi      -       1$")
+                # Ingresar botones
+        self.boton_agregar=tk.Button(
+            self,
+            text="Agregar producto",
+            font=("Arial",14,"bold"),
+            command=self.abrir_ventana_agregar            
+        )
+        self.boton_agregar.pack(pady=5)
         
-if __name__ == "__main__":
-    app = Tienda()  # Crear la instancia de la tienda
-    app.mainloop()  # mainloop para que se ejecute el programa sin cerrarse
+        
+    def abrir_ventana_agregar(self):
+        self.ventana_nueva=tk.Toplevel(self)
+        self.ventana_nueva.title("Agregar producto")
+        self.ventana_nueva.geometry("250x250")
+        self.roclo=tk.Label(
+            self.ventana_nueva,
+            text="nombre del producto",
+            font=("Arial",14,"bold")
+        )
+        self.roclo.pack(pady=5)
+        
+app = Tienda()  # Crear la instancia de la tienda
+app.mainloop()  # mainloop para que se ejecute el programa sin cerrarse
